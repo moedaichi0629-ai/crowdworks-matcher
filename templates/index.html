@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>クラウドワークス案件マッチャー</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <main class="container">
+    <nav class="nav-row">
+      <a href="/history" class="nav-link">応募履歴を見る →</a>
+    </nav>
+
+    <h1>クラウドワークス案件マッチャー</h1>
+    <p class="lead">案件文章を貼り付けると、自分に合っているかを診断し、応募文を自動生成します。</p>
+
+    <section class="card">
+      <label for="jobText" class="label">案件文章</label>
+      <textarea id="jobText" placeholder="クラウドワークスの案件文をここに貼り付け" rows="10"></textarea>
+      <div id="inputError" class="error-message hidden"></div>
+      <div class="btn-row">
+        <button id="diagnoseBtn" class="btn btn-primary">診断する</button>
+        <button id="resetBtn" class="btn btn-outline" type="button">リセット</button>
+      </div>
+    </section>
+
+    <section id="resultSection" class="card hidden">
+      <h2>診断結果</h2>
+      <div id="resultContent"></div>
+      <div class="btn-row">
+        <button id="generateBtn" class="btn btn-secondary" disabled>応募文を生成する</button>
+        <button id="nextJobBtn" class="btn btn-outline" type="button">次の案件へ（リセット）</button>
+      </div>
+    </section>
+
+    <section id="applicationSection" class="card hidden">
+      <h2>応募文</h2>
+      <textarea id="applicationText" rows="12"></textarea>
+      <div class="btn-row">
+        <button id="copyBtn" class="btn btn-primary">コピー</button>
+        <button id="saveApplicationBtn" class="btn btn-secondary" type="button">この案件を応募済みにする</button>
+        <span id="copyStatus" class="copy-status hidden">コピーしました</span>
+      </div>
+      <div id="saveError" class="error-message hidden"></div>
+      <p id="saveStatus" class="save-status hidden">応募履歴に保存しました。<a href="/history">履歴を見る →</a></p>
+    </section>
+
+    <section id="chatSection" class="card">
+      <h2>この案件について質問する</h2>
+      <p class="lead-small">例：この案件に応募するときの希望金額はどのように設定したらいいですか？</p>
+      <div id="chatLog" class="chat-log"></div>
+      <div id="chatError" class="error-message hidden"></div>
+      <div class="chat-input-row">
+        <textarea id="chatInput" placeholder="質問を入力してください" rows="2"></textarea>
+        <button id="chatSendBtn" class="btn btn-primary" type="button">送信</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>

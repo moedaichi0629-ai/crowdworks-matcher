@@ -1,0 +1,376 @@
+:root {
+  --color-bg: #f7f7f8;
+  --color-surface: #ffffff;
+  --color-border: #e2e2e6;
+  --color-text: #222222;
+  --color-text-light: #666666;
+  --color-primary: #2f6fed;
+  --color-primary-dark: #1f56c9;
+  --color-secondary: #4a4a4a;
+  --color-error: #d64545;
+  --color-success: #2f9e5f;
+  --radius: 8px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Segoe UI", sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px 20px 80px;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 4px;
+}
+
+.lead {
+  color: var(--color-text-light);
+  margin-top: 0;
+  margin-bottom: 24px;
+  font-size: 14px;
+}
+
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.card h2 {
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--color-text-light);
+}
+
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-family: inherit;
+  resize: vertical;
+  color: var(--color-text);
+  background: #fdfdfd;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  background: #ffffff;
+}
+
+.btn-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 10px 24px;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, opacity 0.15s ease, border-color 0.15s ease;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: #ffffff;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--color-primary-dark);
+}
+
+.btn-secondary {
+  background: var(--color-secondary);
+  color: #ffffff;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: #2f2f2f;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-text-light);
+  border: 1px solid var(--color-border);
+}
+
+.btn-outline:hover:not(:disabled) {
+  background: #f0f0f2;
+  color: var(--color-text);
+  border-color: #c9c9cf;
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.error-message {
+  color: var(--color-error);
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+.copy-status {
+  margin-left: 10px;
+  color: var(--color-success);
+  font-size: 13px;
+}
+
+.save-status {
+  color: var(--color-success);
+  font-size: 13px;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.save-status a {
+  color: var(--color-success);
+  font-weight: 600;
+}
+
+/* 診断結果表示 */
+.judgment-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-right: 12px;
+}
+
+.judgment-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.judgment-score {
+  font-size: 14px;
+  color: var(--color-text-light);
+}
+
+.judgment-summary {
+  font-size: 14px;
+  margin-bottom: 16px;
+  padding: 12px;
+  background: #f4f6fb;
+  border-radius: var(--radius);
+}
+
+.judgment-badge.score-good { background: #2f9e5f; }
+.judgment-badge.score-ok { background: #4a90d9; }
+.judgment-badge.score-caution { background: #e0a72d; }
+.judgment-badge.score-bad { background: #b0b0b0; }
+
+.reasons-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.reasons-list li {
+  padding: 10px 0;
+  border-top: 1px solid var(--color-border);
+  font-size: 14px;
+}
+
+.reasons-list li:first-child {
+  border-top: none;
+}
+
+.reason-label {
+  display: block;
+  font-weight: 600;
+  font-size: 12px;
+  color: var(--color-text-light);
+  margin-bottom: 2px;
+}
+
+/* チャット */
+.lead-small {
+  color: var(--color-text-light);
+  font-size: 13px;
+  margin-top: 0;
+  margin-bottom: 14px;
+}
+
+.chat-log {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 360px;
+  overflow-y: auto;
+  margin-bottom: 12px;
+}
+
+.chat-message {
+  max-width: 85%;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.chat-message.user {
+  align-self: flex-end;
+  background: var(--color-primary);
+  color: #ffffff;
+  border-bottom-right-radius: 2px;
+}
+
+.chat-message.assistant {
+  align-self: flex-start;
+  background: #f0f1f4;
+  color: var(--color-text);
+  border-bottom-left-radius: 2px;
+}
+
+.chat-message.pending {
+  opacity: 0.6;
+}
+
+.chat-input-row {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+}
+
+.chat-input-row textarea {
+  flex: 1;
+  resize: vertical;
+}
+
+.chat-input-row .btn {
+  margin-top: 0;
+  flex-shrink: 0;
+}
+
+/* ナビゲーション */
+.nav-row {
+  margin-bottom: 14px;
+}
+
+.nav-link {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+/* 応募履歴一覧 */
+.history-item {
+  cursor: pointer;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.history-item:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.history-item-main {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.history-item-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.history-item-title {
+  font-weight: 600;
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.history-item-meta {
+  color: var(--color-text-light);
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.history-reply-count {
+  color: var(--color-primary);
+}
+
+.history-reply-count.muted {
+  color: var(--color-text-light);
+}
+
+.judgment-badge.small {
+  width: 32px;
+  height: 32px;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+/* 応募履歴詳細 */
+.job-text-details summary {
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.job-text-body {
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-size: 14px;
+  background: #f4f6fb;
+  border-radius: var(--radius);
+  padding: 12px;
+  margin: 10px 0 0;
+}
+
+.reply-thread {
+  max-height: 400px;
+}

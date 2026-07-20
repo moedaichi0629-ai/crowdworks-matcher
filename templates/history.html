@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>応募履歴 - クラウドワークス案件マッチャー</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <main class="container">
+    <nav class="nav-row">
+      <a href="/" class="nav-link">← 案件診断に戻る</a>
+    </nav>
+
+    <h1>応募履歴</h1>
+    <p class="lead">「応募済みにする」で保存した案件の一覧です。クライアントから返信が届いたら、詳細画面で返信案を作成できます。</p>
+
+    <div id="listView">
+      <div id="historyEmpty" class="card hidden">
+        <p class="lead-small" style="margin:0;">まだ応募履歴がありません。案件診断ページで応募文を生成し、「この案件を応募済みにする」を押すとここに表示されます。</p>
+      </div>
+      <div id="historyListError" class="error-message hidden"></div>
+      <div id="historyList"></div>
+    </div>
+
+    <div id="detailView" class="hidden">
+      <button id="backToListBtn" class="btn btn-outline" type="button">← 一覧に戻る</button>
+
+      <section class="card">
+        <h2 id="detailTitle">案件</h2>
+        <div id="detailJudgment"></div>
+        <details class="job-text-details">
+          <summary>案件文章を表示</summary>
+          <p id="detailJobText" class="job-text-body"></p>
+        </details>
+      </section>
+
+      <section class="card">
+        <h2>送付した応募文</h2>
+        <p id="detailApplicationText" class="job-text-body"></p>
+      </section>
+
+      <section class="card">
+        <h2>クライアントとのやり取り</h2>
+        <div id="replyThread" class="chat-log reply-thread"></div>
+
+        <div id="replyError" class="error-message hidden"></div>
+
+        <label for="clientMessageInput" class="label">クライアントから届いた返信を貼り付け</label>
+        <textarea id="clientMessageInput" placeholder="クライアントからのメッセージをここに貼り付け" rows="4"></textarea>
+        <button id="createReplyBtn" class="btn btn-primary" type="button">返信案を作成する</button>
+
+        <div id="suggestedReplySection" class="hidden">
+          <label for="suggestedReplyText" class="label">返信案（編集可能）</label>
+          <textarea id="suggestedReplyText" rows="8"></textarea>
+          <button id="copyReplyBtn" class="btn btn-primary" type="button">コピー</button>
+          <span id="copyReplyStatus" class="copy-status hidden">コピーしました</span>
+        </div>
+      </section>
+
+      <button id="deleteApplicationBtn" class="btn btn-outline" type="button">この応募履歴を削除する</button>
+    </div>
+  </main>
+
+  <script src="/static/history.js"></script>
+</body>
+</html>
