@@ -2,7 +2,7 @@
 
 自分のプロフィールをもとに、案件の診断・応募文生成・クライアントへの返信作成を支援するローカルアプリです。
 
-[作品一覧](https://github.com/moedaichi0629-ai/landing-page) · [ポートフォリオ](https://moedaichi0629-ai.github.io/landing-page/)
+[作品一覧](https://github.com/moedaichi0629-ai/landing-page) · [ポートフォリオ](https://moedaichi0629-ai.github.io/)
 
 ## 解決する課題
 
